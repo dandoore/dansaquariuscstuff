@@ -30,6 +30,7 @@
 // Prototypes
 
 int keypress();
+int rnd(int range);
 void setuplife();
 void cyclelife();
 void addd(int x, int y);
