@@ -31,6 +31,8 @@
 
 int keypress();
 int rnd(int range);
+void clearscreen();
+void intro();
 void setuplife();
 void cyclelife();
 void addd(int x, int y);
@@ -44,6 +46,7 @@ int popul, gen;
 // Main
 
 void main() {
+  intro();
   while (1) // Infinate loop
   {
     setuplife();
@@ -75,15 +78,14 @@ int keypress() {
   }
 }
 
-// Setup Life function
+// Clear Screen
 
-void setuplife() {
-  int rnumber, i, row, col;
-
+void clearscreen() {
+  int row, col;
   // Set ANSI Colours for foreground and background
 
-  printf("%c[%um", 27, 30);  // Black ink
-  printf("%c[%um", 27, 46);  // White paper
+  printf("%c[%um", 27, 30); // Black ink
+  printf("%c[%um", 27, 46); // White paper
 
   // Clear screen
 
@@ -93,7 +95,29 @@ void setuplife() {
       putchar(' ');
     }
   }
-  
+}
+
+// Intro
+
+void intro() {
+  clearscreen();
+  gotoxy(10, 8);
+  printf("John Conway's Life\n");
+  gotoxy(25, 9);
+  printf(",");
+  gotoxy(12, 10);
+  printf("2022 Dan Doore");
+  gotoxy(12, 13);
+  printf("Press any key!");
+  while (!keypress()) {}
+}
+
+// Setup Life function
+
+void setuplife() {
+  int rnumber, i, row, col;
+
+  clearscreen();
   // Clear world
 
   for (row = 0; row < ROWS; row++) {
