@@ -6,8 +6,9 @@ Subtitled 'More Adventures in Cross Compiling' - more stuff with Z88DK https://g
 
 Projects completed:
 
-    Life - John Conway's Life, basic first stab at it.
+* Life - John Conway's Life, basic first stab at it.
+
+* AquaPad - Aquarius Game Pad Tester
 
 Projects ongoing:
 
-    AquaPad - Aquarius Game Pad Tester
