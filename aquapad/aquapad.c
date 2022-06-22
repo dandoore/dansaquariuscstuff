@@ -269,7 +269,7 @@ void showpad(int port, int xoffset, int yoffset) {
 
   padval = (val & 31);
 
-  // If the compiler supports GCC binary literals it might make more sense to use 0b00011' instead of '3' here, YMMV.
+  // If the compiler supports GCC binary literals it might make more sense to use them e.g. 0b00011' instead of '3' here, YMMV.
 
   gotoxy(xoffset + 12, yoffset + 8);
   if (padval == 29) {
