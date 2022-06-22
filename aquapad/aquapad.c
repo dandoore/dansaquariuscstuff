@@ -265,9 +265,11 @@ void showpad(int port, int xoffset, int yoffset) {
 
   // Pad
 
-  // Drop front 3 bits to get pad bits only
+  // Drop front 2 bits (dedicated to K buttons) to get pad bits only
 
   padval = (val & 31);
+
+  // If the compiler supports GCC binary literals it might make more sense to use 0b00011' instead of '3' here, YMMV.
 
   gotoxy(xoffset + 12, yoffset + 8);
   if (padval == 29) {
