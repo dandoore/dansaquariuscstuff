@@ -2,6 +2,8 @@
 
 Hand controller/Pad tester utility.
 
+Thanks: M. v.d. Steenoven - https://www.vdsteenoven.com/aquarius/hndcntrl.html
+
 Requires 4Kb expansion
 
 * For ROM file - load into emulator or (if crazy) burn to suitable EPROM
