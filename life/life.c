@@ -1,7 +1,7 @@
 //               ,
 // Life! Dan Doore '96
 //
-// Life was thieved from a PC C Compiler disc (PD, of course) and is John Conway's life algorithm.
+// Life was thieved from a PC C Compiler disc (PD, of course) and is John Conway's Game of Life algorithm.
 //
 // 2022 remix for Z88DK (https://www.z88dk.org/
 //
@@ -11,13 +11,7 @@
 //
 // ROM file: zcc +aquarius life.c -subtype=rom -clib=ansi -lm -create-app -o life
 
-#include <stdio.h>
-
-#include <stdlib.h>
-
 #include <conio.h>
-
-#include <graphics.h>
 
 // Macros
 
@@ -32,6 +26,7 @@
 int keypress();
 int rnd(int range);
 void clearscreen();
+void centre(int line, char * text);
 void intro();
 void setuplife();
 void cyclelife();
@@ -97,18 +92,21 @@ void clearscreen() {
   }
 }
 
+// Centre Text Print
+
+void centre(int line, char * text) {
+  gotoxy((SCREENX - strlen(text)) / 2, line);
+  printf("%s", text);
+}
+
 // Intro
 
 void intro() {
   clearscreen();
-  gotoxy(10, 8);
-  printf("John Conway's Life\n");
-  gotoxy(25, 9);
-  printf(",");
-  gotoxy(12, 10);
-  printf("2022 Dan Doore");
-  gotoxy(12, 13);
-  printf("Press any key!");
+  centre(8,"John Conway's Game of Life");
+  centre(9,"             ,");
+  centre(10,"2022 Dan Doore");
+  centre(13,"Press any key!");
   while (!keypress()) {}
 }
 
