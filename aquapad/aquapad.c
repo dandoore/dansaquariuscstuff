@@ -245,7 +245,7 @@ void showpad(int port, int xoffset, int yoffset) {
     printf("K3");
   }
   gotoxy(xoffset, yoffset + 1);
-  if (!bit[5] && bit[7]) {
+  if (!bit[5]) {
     printf("**");
   } else {
     printf("K4");
