@@ -1,6 +1,6 @@
 # Life
 
-Requires 4Kb expansion
+Requires 4Kb expansion for tape version
 
 * For ROM file - load into emulator or (if crazy) burn to suitable EPROM
 
