@@ -49,7 +49,7 @@ void main() {
   setuppad(LEFTPADXOFFSET, LEFTPADYOFFSET, "Left");
   setuppad(RIGHTPADXOFFSET, RIGHTPADYOFFSET, "Right");
   centre(22, "                                       ,");
-  centre(23, "AquaPad Pad Tester v1.0 - 2022 Dan Doore");
+  centre(23, "AquaPad Pad Tester v1.1 - 2022 Dan Doore");
   while (1) {
     showpad(LEFTPADPORT, LEFTPADXOFFSET, LEFTPADYOFFSET);
     showpad(RIGHTPADPORT, RIGHTPADXOFFSET, RIGHTPADYOFFSET);
@@ -127,7 +127,7 @@ void intro() {
   int val;
 
   clearscreen();
-  centre(5, "AquaPad v1.0");
+  centre(5, "AquaPad v1.1");
   centre(8, "Aquarius Pad Tester");
   centre(9, "             ,");
   centre(10, "2022 Dan Doore");
@@ -271,8 +271,10 @@ void showpad(int port, int xoffset, int yoffset) {
 
   // If the compiler supports GCC binary literals it might make more sense to use them e.g. 0b00011' instead of '3' here, YMMV.
 
+  // Some pad directions still need to front 2 bits to distinguish the presses of the K buttons (P01,P05,P13)
+
   gotoxy(xoffset + 12, yoffset + 8);
-  if (padval == 29) {
+  if (padval == 29 && bit[7]) {
     printf("***");
   } else {
     printf("P01");
@@ -296,7 +298,7 @@ void showpad(int port, int xoffset, int yoffset) {
     printf("P04");
   }
   gotoxy(xoffset + 6, yoffset + 13);
-  if (padval == 30) {
+  if (padval == 30 && bit[7]) {
     printf("***");
   } else {
     printf("P05");
@@ -344,7 +346,7 @@ void showpad(int port, int xoffset, int yoffset) {
     printf("P12");
   }
   gotoxy(xoffset + 6, yoffset + 3);
-  if (padval == 27) {
+  if (padval == 27 && bit[7]) {
     printf("***");
   } else {
     printf("P13");
