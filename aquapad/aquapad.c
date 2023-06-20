@@ -49,7 +49,7 @@ void main() {
   setuppad(LEFTPADXOFFSET, LEFTPADYOFFSET, "Left");
   setuppad(RIGHTPADXOFFSET, RIGHTPADYOFFSET, "Right");
   centre(22, "                                       ,");
-  centre(23, "AquaPad Pad Tester v1.1 - 2022 Dan Doore");
+  centre(23, "AquaPad Pad Tester v1.2 - 2022 Dan Doore");
   while (1) {
     showpad(LEFTPADPORT, LEFTPADXOFFSET, LEFTPADYOFFSET);
     showpad(RIGHTPADPORT, RIGHTPADXOFFSET, RIGHTPADYOFFSET);
@@ -127,7 +127,7 @@ void intro() {
   int val;
 
   clearscreen();
-  centre(5, "AquaPad v1.1");
+  centre(5, "AquaPad v1.2");
   centre(8, "Aquarius Pad Tester");
   centre(9, "             ,");
   centre(10, "2022 Dan Doore");
@@ -245,7 +245,7 @@ void showpad(int port, int xoffset, int yoffset) {
     printf("K3");
   }
   gotoxy(xoffset, yoffset + 1);
-  if (!bit[5]) {
+  if (!bit[5] && bit[7]){
     printf("**");
   } else {
     printf("K4");
